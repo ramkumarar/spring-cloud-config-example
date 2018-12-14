@@ -12,7 +12,7 @@ public class ActuatorSecurity extends WebSecurityConfigurerAdapter {
                  http.csrf().disable()
                          .httpBasic().and()
                          .authorizeRequests()
-                         .requestMatchers(EndpointRequest.to("health","info")).permitAll()
+                         .requestMatchers(EndpointRequest.to("health","info","/bus-refresh")).permitAll()
                          .antMatchers("/**").authenticated();
 
     }
